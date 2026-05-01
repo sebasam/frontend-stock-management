@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProductResponse } from '../models/product-response.interface';
 import { MovementRequest } from '../models/movement-request.interface';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class InventoryService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:5024/productos';
+  private apiUrl = `${environment.apiUrl}/productos`;
 
   getInventory(): Observable<ProductResponse[]> {
     return this.http.get<ProductResponse[]>(`${this.apiUrl}/inventario`);

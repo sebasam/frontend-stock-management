@@ -1,56 +1,55 @@
 # CCL Inventory Management System - Frontend
 
-Esta es la aplicación frontend para el sistema de gestión de inventario CCL, construida con Angular 19 (Standalone Components).
+This is the frontend application for the CCL Inventory Management System, built with Angular 19 (Standalone Components).
 
-## Prerrequisitos
+## Prerequisites
 
 - Node.js (v18+)
 - Angular CLI (v19)
-- API Backend ejecutándose localmente en el puerto 5024
+- Backend API running locally on port 5024
 
-## Configuración y Ejecución
+## Setup and Execution
 
-### 1. Instalar dependencias
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Ejecutar la aplicación
+### 2. Run the application
 
 ```bash
 ng serve
 ```
 
-### 3. Acceder a la aplicación
+### 3. Access the application
 
-Navega a:
+Navigate to:
 
 http://localhost:4200
 
-Inicia sesión con las credenciales por defecto:
+Log in using the default credentials:
 
-- **Usuario:** admin  
-- **Contraseña:** admin123  
-
----
-
-## Características de la Arquitectura
-
-- **Standalone Components:** Sin necesidad de NgModules.
-- **Interceptors funcionales:** Adjuntan automáticamente el token JWT Bearer a las peticiones API.
-- **Guards de rutas funcionales:** Protegen la ruta `/inventory` contra accesos no autorizados.
-- **Reactive Forms:** Usados para formularios seguros y validados (Login y Movimientos).
+- **User:** admin  
+- **Password:** admin123  
 
 ---
 
-## Comandos de Git
+## Architecture Features
+
+- **Standalone Components:** Zero NgModule overhead.
+- **Functional Interceptors:** Automatically attaches the JWT Bearer token to API requests.
+- **Functional Route Guards:** Protects the `/inventory` route from unauthorized access.
+- **Reactive Forms:** Used for secure and validated Login and Movement forms.
+
+---
+
+## Run tests
 
 ```bash
-git add README.md
-git commit -m "docs: agregar instrucciones de configuración del frontend y lista de características"
+ng test
 ```
 
 ---
 
-Con esto listo, solo debes ejecutar `ng serve` en tu terminal, ingresar a `http://localhost:4200` y verás tu sistema funcionando completamente, conectado al backend en tiempo real.
+With this done, just run `ng serve` in your terminal, go to `http://localhost:4200`, and you will see your system fully working, connected to the backend in real time.

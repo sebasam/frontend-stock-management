@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
 import { InventoryListComponent } from './inventory-list.component';
 
 describe('InventoryListComponent', () => {
@@ -8,16 +10,24 @@ describe('InventoryListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InventoryListComponent]
-    })
-    .compileComponents();
+      imports: [InventoryListComponent],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideRouter([])
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InventoryListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the inventory list component', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should initialize products array as empty before calling the service', () => {
+    expect(component.products.length).toBe(0);
   });
 });
